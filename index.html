@@ -135,16 +135,21 @@ nav.desknav a:hover{border-color:var(--gold);}
 .info-row .value{font-size:18px;color:var(--espresso);}
 .info-row .value a{border-bottom:1px solid var(--clay);}
 .placeholder{font-style:italic;color:#9a8b6f;}
-.mapbox{width:100%;aspect-ratio:4/3;border:1px solid rgba(43,29,20,.2);display:flex;align-items:center;justify-content:center;background:
-  repeating-linear-gradient(45deg,rgba(169,80,46,.08) 0 12px, transparent 12px 24px), var(--cream);
-  color:var(--espresso-2);font-size:14px;text-align:center;padding:20px;}
-@media(max-width:780px){.contacts-grid{grid-template-columns:1fr;}}
+.hours-table{width:100%;border-collapse:collapse;font-size:15px;}
+.hours-table tr{border-bottom:1px dashed rgba(43,29,20,.18);}
+.hours-table tr:last-child{border-bottom:none;}
+.hours-table td{padding:6px 0;}
+.hours-table td:first-child{color:var(--espresso-2);}
+.hours-table td:last-child{text-align:right;font-weight:600;color:var(--clay-dark);}
+.mapbox{width:100%;aspect-ratio:4/3;border:1px solid rgba(43,29,20,.2);overflow:hidden;}
+.mapbox iframe{width:100%;height:100%;border:0;}
 
 footer{background:var(--espresso);color:rgba(239,227,195,.7);padding:44px 24px;text-align:center;font-size:13.5px;}
 footer .logo{color:var(--sand);margin-bottom:10px;justify-content:center;}
 footer .logo-mark{background:rgba(239,227,195,.12);}
 footer a{border-bottom:1px solid rgba(239,227,195,.3);}
 
+@media(max-width:780px){.contacts-grid{grid-template-columns:1fr;}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
 </style>
 </head>
@@ -400,15 +405,6 @@ footer a{border-bottom:1px solid rgba(239,227,195,.3);}
   </div>
 </section>
 
-<section class="perks">
-  <div class="perks-grid">
-    <div class="perk"><div class="mark"></div><h3>Свежие ингредиенты</h3><p>Готовим каждый день из свежих продуктов — без заморозки и полуфабрикатов.</p></div>
-    <div class="perk"><div class="mark"></div><h3>Восточные специи</h3><p>Сумах, зира, кардамон и корица — привозные специи для настоящего вкуса Дамаска.</p></div>
-    <div class="perk"><div class="mark"></div><h3>Уютная атмосфера</h3><p><span class="placeholder">[Описание интерьера — заменить]</span></p></div>
-    <div class="perk"><div class="mark"></div><h3>Доставка и самовывоз</h3><p><span class="placeholder">[Условия доставки/самовывоза — уточнить и заменить]</span></p></div>
-  </div>
-</section>
-
 <section class="contacts" id="contacts">
   <div class="contacts-grid">
     <div>
@@ -428,15 +424,23 @@ footer a{border-bottom:1px solid rgba(239,227,195,.3);}
       </div>
       <div class="info-row">
         <div class="label">Часы работы</div>
-        <div class="value placeholder">[Часы работы — заменить]</div>
-      </div>
-      <div class="info-row">
-        <div class="label">Соцсети</div>
-        <div class="value placeholder">[Ссылки на соцсети — заменить]</div>
+        <div class="value">
+          <table class="hours-table">
+            <tr><td>Понедельник</td><td>11:00–22:00</td></tr>
+            <tr><td>Вторник</td><td>11:00–22:00</td></tr>
+            <tr><td>Среда</td><td>11:00–22:00</td></tr>
+            <tr><td>Четверг</td><td>11:00–22:00</td></tr>
+            <tr><td>Пятница</td><td>11:00–22:00</td></tr>
+            <tr><td>Суббота</td><td>11:00–22:00</td></tr>
+            <tr><td>Воскресенье</td><td>11:00–22:00</td></tr>
+          </table>
+        </div>
       </div>
       <a class="btn" href="tel:+79803846933" style="margin-top:8px;">Позвонить и заказать</a>
     </div>
-    <div class="mapbox">Карта — вставьте виджет Яндекс.Карт или Google Maps<br>с адресом: просп. Богдана Хмельницкого, 77, Белгород</div>
+    <div class="mapbox">
+      <iframe src="https://yandex.ru/map-widget/v1/?text=Белгород%2C%20проспект%20Богдана%20Хмельницкого%2C%2077&z=16" allowfullscreen="true"></iframe>
+    </div>
   </div>
 </section>
 
